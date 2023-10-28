@@ -1,7 +1,6 @@
 import click
 
 
-
 @click.command()
 def cli():
     first_name = click.prompt("Enter an integer", type=click.STRING, default=0)

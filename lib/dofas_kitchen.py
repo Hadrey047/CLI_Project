@@ -1,12 +1,14 @@
-import click
-from sqlalchemy import create_engine, func
-from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime
-from sqlalchemy.orm import relationship, backref, sessionmaker
+
+
+from sqlalchemy import ForeignKey, Table, Column, Integer, String
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('sqlite:///dofas.db')
+
+
 
 Base = declarative_base()
+
 
 all_user = Table(
     'all_users',
@@ -73,6 +75,3 @@ def __repr__(self):
             f'alcholic_drink={self.alcholic_drink}, ' + \
             f'wine={self.wine},)' 
 
-Base.metadata.create_all(engine)
-
-Session = sessionmaker(bind=engine)
